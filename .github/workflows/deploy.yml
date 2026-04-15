@@ -13,7 +13,7 @@ jobs:
         with:
           persist-credentials: false
       - uses: actions/checkout@v2
-      - run: yarn install --frozen-lockfile
+      - run: yarn install
 
       - run: echo "Running tests..."
       - run: yarn test
