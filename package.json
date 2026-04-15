@@ -2,6 +2,7 @@
   "scripts": {
     "start": "parcel ./src/index.html",
     "build": "rm -rf build && parcel build -d build --public-url ./ --no-source-maps ./src/index.html",
+    "test": "mocha -r ts-node/register tests/**/*.ts",
     "zip": "rm -f bundle.zip && cd build && bestzip ../bundle.zip *",
     "bundle": "yarn build && yarn zip"
   },

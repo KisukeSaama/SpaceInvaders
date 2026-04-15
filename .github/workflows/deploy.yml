@@ -14,7 +14,14 @@ jobs:
           persist-credentials: false
       - uses: actions/checkout@v2
       - run: yarn install --frozen-lockfile
+
+      - run: echo "Running tests..."
+      - run: yarn test
+
+      - run: echo "Building the project..."
       - run: yarn build
+      
+      - run: echo "Deploying to GitHub Pages..."
       - uses: JamesIves/github-pages-deploy-action@releases/v3
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
