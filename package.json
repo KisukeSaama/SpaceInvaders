@@ -4,7 +4,7 @@
     "build": "rm -rf build && parcel build -d build --public-url ./ --no-source-maps ./src/index.html",
     "test": "mocha -r ts-node/register tests/test.js",
     "zip": "rm -f bundle.zip && cd build && bestzip ../bundle.zip *",
-    "bundle": "yarn build && yarn zip"
+    "bundle": "npm build && npm zip"
   },
   "devDependencies": {
     "bestzip": "^2.2.0",

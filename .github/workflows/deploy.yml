@@ -13,13 +13,13 @@ jobs:
         with:
           persist-credentials: false
       - uses: actions/checkout@v2
-      - run: yarn install
+      - run: npm install
 
       - run: echo "Running tests..."
-      - run: yarn test
+      - run: npm test
 
       - run: echo "Building the project..."
-      - run: yarn build
+      - run: npm build
       
       - run: echo "Deploying to GitHub Pages..."
       - uses: JamesIves/github-pages-deploy-action@releases/v3
