@@ -4,6 +4,7 @@ const Vector = require("../src/ts/math/vector.ts")
 
 describe('Vector',() => {
     const vector = new Vector();
+    const { clamp, lerp, distance, toVector, normalize, dot, add, subtract } = vector;
     describe('clamp()',() => {
         it('clamp(1,10,2) returns 2',() => {
         assert.equal(vector.clamp(1, 10, 2), 2);

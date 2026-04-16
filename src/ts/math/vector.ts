@@ -68,3 +68,4 @@ export function distance(a: Vector, b: Vector): number {
     y: a.y - b.y
   });
 }
+
