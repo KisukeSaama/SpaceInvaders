@@ -1,6 +1,6 @@
 const assert = require("assert")
 const { describe } = require("mocha")
-const Math = require("../src/ts/math")
+const Math = require("../src/ts/math/*.ts")
 
 describe('Math',() => {
     const math = new Math.Math();
