@@ -5,14 +5,12 @@ const {
   normalize,
   dot,
   add,
-  subtract,
-  distance,
-  lerp
+  subtract
 } = require("../src/ts/math/vector.ts")
 
-const { clamp } = require("../src/ts/math/math.ts")
+const { clamp, lerp } = require("../src/ts/math/math.ts")
 
-const { toVector } = require("../src/ts/math/polar-vector.ts")
+const { distance, toVector } = require("../src/ts/math/polar-vector.ts")
 
 describe('Vector',() => {
     describe('clamp()',() => {
