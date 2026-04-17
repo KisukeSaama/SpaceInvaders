@@ -37,9 +37,9 @@ export function init(): InitFunctionOutput {
 
 function getInput(): Input {
   const gamepads = navigator.getGamepads();
-  if (!gamepads) return;
+  if (!gamepads) return null;
   const gamepad = Object.values(gamepads).find(gp => gp);
-  if (!gamepad) return;
+  if (!gamepad) return null;
 
 
   const axes = {

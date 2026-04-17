@@ -26,10 +26,15 @@ export function init(): InitFunctionOutput {
     handle.addEventListener('touchstart', onHandleGrab);
     handle.addEventListener('touchend', onHandleRelease);
     plane.addEventListener('touchmove', onMove);
+    if (fireButton) {
     fireButton.addEventListener('touchstart', onFireGrab, false);
+    }
+    if (fireButton) {
     fireButton.addEventListener('touchend', onFireRelease, false);
+    }
+    if (fireButton) { 
     fireButton.removeEventListener('touchcancel', onFireRelease, false);
-
+    }
     plane.hidden = false;
     ready();
   }
@@ -38,9 +43,15 @@ export function init(): InitFunctionOutput {
     handle.removeEventListener('touchstart', onHandleGrab);
     handle.removeEventListener('touchend', onHandleRelease);
     plane.removeEventListener('touchmove', onMove);
+    if (fireButton) {
     fireButton.removeEventListener('touchstart', onFireGrab);
+    }
+    if (fireButton) {
     fireButton.removeEventListener('touchend', onFireRelease);
+    }
+    if (fireButton) {
     fireButton.removeEventListener('touchcancel', onFireRelease);
+    }
     plane.hidden = true;
   }
 

@@ -3,7 +3,8 @@
   "compilerOptions": {
     "rootDir": ".",
     "outDir": "build",
-    "lib": ["DOM"]
+    "lib": ["DOM", "es5", "es6", "dom", "dom.iterable"],
+    "strict": false
   },
   "include": [
     "src/**/*.ts",

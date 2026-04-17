@@ -9,7 +9,9 @@ export function init() {
   const $gameOverScore = document.querySelector('#game-over-score');
   const $gameOverHighscore = document.querySelector('#game-over-highscore');
   const $gameOverButton = document.querySelector('#game-over-button');
-  $gameOverButton.addEventListener('click', () => location.reload());
+  if ($gameOverButton) {
+    $gameOverButton.addEventListener('click', () => location.reload());
+  }
 
   return {
     addPoints
@@ -37,8 +39,14 @@ export function init() {
   }
 
   function updateUI() {
-    $score.textContent = String(score);
-    $gameOverScore.textContent = String(score);
-    $gameOverHighscore.textContent = String(highscore);
+    if ($score) {
+      $score.textContent = String(score);
+    }
+    if ($gameOverScore) {
+      $gameOverScore.textContent = String(score);
+    }
+    if ($gameOverHighscore) {
+      $gameOverHighscore.textContent = String(highscore);
+    }
   }
 }

@@ -14,7 +14,9 @@ export function init() {
       imageData.data[i + 2] = val;
       imageData.data[i + 3] = 255;
     }
-    ctx.putImageData(imageData, 0, 0);
+    if (ctx) {
+      ctx.putImageData(imageData, 0, 0);
+    }
   }
 
   function resize() {
