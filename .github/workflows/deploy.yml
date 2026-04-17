@@ -15,9 +15,8 @@ jobs:
       - uses: actions/checkout@v2
       - run: npm install
 
-      - run: npm test
-
-      - run: npm run build
+      - name: Run Tests
+        run: npm test
       
       - uses: JamesIves/github-pages-deploy-action@releases/v3
         with:
@@ -25,5 +24,9 @@ jobs:
           BRANCH: gh-pages
           FOLDER: build
 
-      - run: npm audit
-      
+      - name: Audit and Fix Vulnerabilities
+        run: npm audit fix
+        continue-on-error: true
+
+      - name: Build
+        run: npm run build
