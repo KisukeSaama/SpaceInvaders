@@ -17,6 +17,9 @@ jobs:
 
       - name: Run Tests
         run: npm test
+
+      - name: Build
+        run: npm run build
       
       - uses: JamesIves/github-pages-deploy-action@releases/v3
         with:
@@ -27,6 +30,3 @@ jobs:
       - name: Audit and Fix Vulnerabilities
         run: npm audit fix
         continue-on-error: true
-
-      - name: Build
-        run: npm run build
