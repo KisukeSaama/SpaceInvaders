@@ -23,7 +23,7 @@ jobs:
         continue-on-error: true  
 
       - name: Exlint
-        run: npx eslint .
+        run: gts lint
         continue-on-error: true
 
       - name: Build
