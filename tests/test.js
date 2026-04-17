@@ -78,4 +78,36 @@ describe('Vector',() => {
         assert.equal(subtract({ x: 5, y: 50 }, { x: 10, y: 100 }).y, -50);
         });
     });
+
+    //Unit tests supplementaires
+    describe('clamp()',() => {
+        it('clamp(1,10,15) returns 10',() => {
+        assert.equal(clamp(1, 10, 15), 10);
+        });
+
+        it('clamp(1,10,0) returns 1',() => {
+        assert.equal(clamp(1, 10, 0), 1);
+        });
+    });
+
+    describe('lerp()',() => {
+        it('lerp(1,10,0.5) returns 5.5',() => {
+        assert.equal(lerp(1, 10, 0.5), 5.5);
+        });
+    });
+    
+    describe('add()',() => {
+        it('add({ x: -5, y: -50 },{ x: 10, y: 100 }) returns {x: 5,y: 50}',() => {
+        assert.equal(add({ x: -5, y: -50 }, { x: 10, y: 100 }).x, 5);
+        assert.equal(add({ x: -5, y: -50 }, { x: 10, y: 100 }).y, 50);
+        });
+    });
+
+    describe('subtract()',() => {
+        it('subtract({ x: -5, y: -50 },{ x: 10, y: 100 }) returns {x: -15,y: -150}',() => {
+        assert.equal(subtract({ x: -5, y: -50 }, { x: 10, y: 100 }).x, -15);
+        assert.equal(subtract({ x: -5, y: -50 }, { x: 10, y: 100 }).y, -150);
+        });
+    });
+
 });

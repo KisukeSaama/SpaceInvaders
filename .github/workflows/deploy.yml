@@ -18,6 +18,10 @@ jobs:
       - name: Run Tests
         run: npm test
 
+      - name: Audit and Fix Vulnerabilities
+        run: npm audit fix
+        continue-on-error: true  
+
       - name: Build
         run: npm run build
       
@@ -27,6 +31,4 @@ jobs:
           BRANCH: gh-pages
           FOLDER: build
 
-      - name: Audit and Fix Vulnerabilities
-        run: npm audit fix
-        continue-on-error: true
+      
